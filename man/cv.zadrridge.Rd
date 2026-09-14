@@ -72,7 +72,7 @@ and the Kullback-Leibler divergence between the observed and te fitted compositi
 \item{be}{
 A list with the ridge beta coefficients.
 }
-\item{sest}{
+\item{est}{
 A list with the ridge estimated compositions.
 }
 }
