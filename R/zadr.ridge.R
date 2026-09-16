@@ -47,12 +47,18 @@ zadr.ridge <- function(y, x, lambda = NULL, nlambda = 100, xnew = NULL, tol = 1e
     loglik_pen[vim] <- mod$loglik_pen + const
   }
 
+  for ( vim in 1:nlambda ) {
+    beta <- be[[ vim ]]
+    beta[-1, ] <- beta[-1, ] / s
+    beta[1, ] <- beta[1, ] - Rfast::eachcol.apply(beta[-1, ], m)
+    be[[ vim ]] <- beta
+  }
+  
   est <- NULL
   if ( !is.null(xnew) ) {
     est <- list()
     xnew <- as.matrix(xnew)
     if ( nrow(xnew) == 1 )  xnew <- t(xnew)
-    xnew <- t( ( t(xnew) - m ) / s )
     xnew <- cbind(1, xnew)
     for ( i in 1:nlambda ) {
       mu <- xnew %*% be[[ i ]]
