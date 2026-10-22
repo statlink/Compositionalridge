@@ -148,6 +148,10 @@
 # define __GCC_ATOMIC_CHAR32_T_LOCK_FREE 2
 #endif
 
+#ifndef __cpp_variadic_templates
+# define __cpp_variadic_templates 200704L
+#endif
+
 #ifndef __UINT_FAST64_MAX__
 # define __UINT_FAST64_MAX__ 0xffffffffffffffffULL
 #endif
@@ -906,10 +910,6 @@
 
 #ifndef __SEH__
 # define __SEH__ 1
-#endif
-
-#ifndef __cpp_variadic_templates
-# define __cpp_variadic_templates 200704L
 #endif
 
 #ifndef __INT_LEAST32_MAX__

@@ -1,0 +1,26 @@
+{
+    "id": "A05A7050",
+    "path": "~/GitHub/Compositionalridge/R/dr.ridge.R",
+    "project_path": "R/dr.ridge.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1792669827817.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "25,44",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1792669801,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1792669801,
+    "read_only": false,
+    "read_only_alternatives": []
+}
