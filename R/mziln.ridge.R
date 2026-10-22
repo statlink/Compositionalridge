@@ -37,7 +37,7 @@ mziln.ridge <- function(y, x, lambda = NULL, nlambda = 100, xnew = NULL) {
 
   pen <- rep( c(0, numeric(p - 1) + 1 ), d)
   ridge <- glmnet::glmnet(xtilde, utilde, alpha = 0, intercept = FALSE, lambda = lambda, nlambda = nlambda,
-                          standardize = TRUE, family = "gaussian", penalty.factor = pen, thresh = 1e-16, maxit = 1e+6)
+                          standardize = TRUE, family = "gaussian", penalty.factor = pen, control = list(thresh = 1e-16, maxit = 1e+6) )
   lambda <- ridge$lambda
   nlambda <- length(lambda)
   if ( is.null( colnames(x) ) ) {
