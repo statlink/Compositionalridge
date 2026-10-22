@@ -18,7 +18,7 @@ and Li et al. (2018) <doi:10.1007/s12561-018-9219-2>.
 Package: \tab Compositionalridge\cr
 Type: \tab Package\cr
 Version: \tab 1.0 \cr
-Date: \tab 2026-09-13 \cr
+Date: \tab 2026-10-22 \cr
 }
 }
 

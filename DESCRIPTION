@@ -2,7 +2,7 @@ Package: Compositionalridge
 Type: Package
 Title: Ridge Regression for Compositional Data
 Version: 1.0
-Date: 2026-09-13
+Date: 2026-10-22
 Authors@R: c(person("Michail", "Tsagris", role = c("aut", "cre"), email = "mtsagris@uoc.gr"),
              person("Christos", "Adam", role = c("aut"),
              email = "pada4m4@gmail.com", comment = c(ORCID = "0009-0003-3244-7034")))
