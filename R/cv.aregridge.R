@@ -31,7 +31,7 @@ cv.aregridge <- function(y, x, a = seq(0.1, by = 0.1), lambda = NULL, nlambda = 
       ytest <- y[ folds[[ k ]], ]
       ytrain <- y[ -folds[[ k ]], ]
       ybtrain <- yb[ -folds[[ k ]], ]
-      est <- Compositionalrige::areg.ridge(y = ytrain, x = xtrain, a = a[i], lambda = lambda, 
+      est <- Compositionalridge::areg.ridge(y = ytrain, x = xtrain, a = a[i], lambda = lambda, 
                                            nlambda = nlambda, yb = ybtrain, xnew = xtest)$est
       for ( j in 1: length(est) ) {
         kl <- ytest * log(ytest / est[[ j ]] )
