@@ -13,14 +13,16 @@ cv.aregridge <- function(y, x, a = seq(0.1, by = 0.1), lambda = NULL, nlambda = 
     } else  folds <- Compositional::makefolds(1:n, nfolds = nfolds, seed = seed, stratified = FALSE)
   }
   nfolds <- length(folds)
-  perf <- mod <- list()
+  perf <- list()
   lopt <- numeric(la)
-
+  
+  yb <- Compositional::alfa(y, a[1])$aff
+  ridge <- glmnet::glmnet(x, yb, alpha = 0, lambda = lambda, nlambda = nlambda, family = "mgaussian")
+  lambda <- ridge$lambda
+  nlambda <- length(ridge$lambda)
+  
   for ( i in 1:la ) {
     yb <- Compositional::alfa(y, a[i])$aff
-    mod[[ i ]] <- areg.ridge(y, x, a = a[i], lambda = lambda, nlambda = nlambda, yb = yb)
-    lambda <- mod[[ i ]]$info[, 1]
-    nlambda <- length(lambda)
     kld <- matrix(nrow = nfolds, ncol = nlambda )
 
     for ( k in 1:nfolds ) {
@@ -29,8 +31,8 @@ cv.aregridge <- function(y, x, a = seq(0.1, by = 0.1), lambda = NULL, nlambda = 
       ytest <- y[ folds[[ k ]], ]
       ytrain <- y[ -folds[[ k ]], ]
       ybtrain <- yb[ -folds[[ k ]], ]
-      est <- areg.ridge(y = ytrain, x = xtrain, a = a[i], lambda = lambda, nlambda = nlambda,
-                        yb = ybtrain, xnew = xtest)$est
+      est <- Compositionalrige::areg.ridge(y = ytrain, x = xtrain, a = a[i], lambda = lambda, 
+                                           nlambda = nlambda, yb = ybtrain, xnew = xtest)$est
       for ( j in 1: length(est) ) {
         kl <- ytest * log(ytest / est[[ j ]] )
         kl[is.infinite(kl)] <- NA
@@ -43,11 +45,12 @@ cv.aregridge <- function(y, x, a = seq(0.1, by = 0.1), lambda = NULL, nlambda = 
     lopt[i] <- which.min(kld[, 2])
     perf[[ i ]] <- kld
   }
-  names(perf) <- names(mod) <- paste("alpha=", a, sep = "")
+  
+  names(perf) <- paste("alpha=", a, sep = "")
   opt <- matrix(nrow = la, ncol = 2)
   rownames(opt) <- paste("alpha=", a, sep = "")
   colnames(opt) <- c("lambda", "KLD")
-    for ( i in 1:la ) {
+  for ( i in 1:la ) {
     id <- which.min(perf[[ i ]][, 2])
     opt[i, ] <- c( perf[[ i ]][id, ] )
   }

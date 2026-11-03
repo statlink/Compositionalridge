@@ -69,14 +69,15 @@ areg.ridge <- function(y, x, a, lambda = NULL, nlambda = 100, yb = NULL, xnew = 
 
     be <- list()
     dev <- numeric(nlambda)
+    ini <- NULL
+    for ( j in 1:d )  ini <- c(ini, coef(ridge)[[ j ]][, i])
     for ( i in 1:nlambda ) {
-      ini <- NULL
-      for ( j in 1:d )  ini <- c(ini, coef(ridge)[[ j ]][, i])
         suppressWarnings({
         mod <- minpack.lm::nls.lm(par = ini, fn = reg, jac = jac, ya = ya, ax = ax, a = a,
-               ha = ha, d = d, D = D, lambda = lambda[i], pen = pen)
+                                  ha = ha, d = d, D = D, lambda = lambda[i], pen = pen)
       })
-      beta <- matrix(mod$par, ncol = d)
+      ini <- mod$par
+      beta <- matrix(ini, ncol = d)
       be[[ i ]] <- beta
       rownames(be[[ i ]]) <- nama
       colnames(be[[ i ]]) <- paste0("Y", 2:D)
