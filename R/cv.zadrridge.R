@@ -26,7 +26,7 @@ cv.zadrridge <- function(y, x, lambda = NULL, nlambda = 100, tol = 1e-06, maxit 
     for ( j in 1: length(est) ) {
       kl <- ytest * log(ytest / est[[ j ]] )
       kl[is.infinite(kl)] <- NA
-      kld[k, j] <- sum(kl, na.rm = TRUE)
+      kld[k, j] <- mean(kl, na.rm = TRUE)
     }
   }
   kld <- cbind( lambda, colMeans(kld, na.rm = TRUE) )

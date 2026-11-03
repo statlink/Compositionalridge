@@ -7,10 +7,8 @@ Ridge Regression for Compositional Data
 
 \description{
 A few ridge regression models for compositional data with zero values present. 
-These are the zero adjusted Dirichlet regression, the multivariate zero inflated logistic normal, 
-the Kullback-Leibler divergence and the alpha-regression. Some relevant papers 
-include Tsagris and Stewart (2018) <doi:10.1134/S1995080218030198>, Tsagris et al. (2026) <doi:10.48550/arXiv.2510.12663>, 
-and Li et al. (2018) <doi:10.1007/s12561-018-9219-2>.  
+These are the zero adjusted Dirichlet regression, the multivariate zero inflated 
+logistic normal, the Kullback-Leibler divergence and the alpha-regression.  
 }
 
 \details{
@@ -18,7 +16,7 @@ and Li et al. (2018) <doi:10.1007/s12561-018-9219-2>.
 Package: \tab Compositionalridge\cr
 Type: \tab Package\cr
 Version: \tab 1.0 \cr
-Date: \tab 2026-10-22 \cr
+Date: \tab 2026-11-03 \cr
 }
 }
 
