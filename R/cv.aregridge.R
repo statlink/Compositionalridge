@@ -1,5 +1,5 @@
 cv.aregridge <- function(y, x, a = seq(0.1, by = 0.1), lambda = NULL, nlambda = 100,
-                        folds = NULL, nfolds = 10, seed = NULL) {
+                        folds = NULL, nfolds = 10) {
 
   runtime <- proc.time()
   if ( min(y) == 0 )  a <- a[a > 0]
@@ -9,8 +9,8 @@ cv.aregridge <- function(y, x, a = seq(0.1, by = 0.1), lambda = NULL, nlambda = 
     poia <- unique( which( y == 0, arr.ind = TRUE)[, 1] )
     if ( length(poia) > nfolds ) {
       id <- numeric(n)   ;   id[poia] <- 1   ;   id <- id + 1
-      folds <- Compositional::makefolds(id, nfolds = nfolds, seed = seed, stratified = TRUE)
-    } else  folds <- Compositional::makefolds(1:n, nfolds = nfolds, seed = seed, stratified = FALSE)
+      folds <- Compositional::makefolds(id, nfolds = nfolds, stratified = TRUE)
+    } else  folds <- Compositional::makefolds(1:n, nfolds = nfolds, stratified = FALSE)
   }
   nfolds <- length(folds)
   perf <- list()
@@ -33,7 +33,7 @@ cv.aregridge <- function(y, x, a = seq(0.1, by = 0.1), lambda = NULL, nlambda = 
       ybtrain <- yb[ -folds[[ k ]], ]
       est <- Compositionalridge::areg.ridge(y = ytrain, x = xtrain, a = a[i], lambda = lambda, 
                                            nlambda = nlambda, yb = ybtrain, xnew = xtest)$est
-      for ( j in 1: length(est) ) {
+      for ( j in 1:length(est) ) {
         kl <- ytest * log(ytest / est[[ j ]] )
         kl[is.infinite(kl)] <- NA
         kld[k, j] <- mean(kl, na.rm = TRUE)

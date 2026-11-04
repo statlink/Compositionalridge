@@ -13,13 +13,13 @@ Cross-validation for ridge regression for compositional data.
 
 \usage{
 cv.zadrridge(y, x, lambda = NULL, nlambda = 100, tol = 1e-06, maxit = 100,
-folds = NULL, nfolds = 10, seed = NULL)
+folds = NULL, nfolds = 10)
 cv.drridge(y, x, lambda = NULL, nlambda = 100, tol = 1e-06, maxit = 100,
-folds = NULL, nfolds = 10, seed = NULL)
+folds = NULL, nfolds = 10)
 cv.kldridge(y, x, lambda = NULL, nlambda = 100,
-folds = NULL,  nfolds = 10, seed = NULL)
+folds = NULL,  nfolds = 10)
 cv.mzilnridge(y, x, lambda = NULL, nlambda = 100,
-folds = NULL, nfolds = 10, seed = NULL)
+folds = NULL, nfolds = 10)
 }
 
 \arguments{
@@ -48,9 +48,6 @@ If you have the list with the folds supply it here. You can also leave it NULL a
 }
 \item{nfolds}{
 The number of folds to produce.
-}
-\item{seed}{
-You can specify your own seed number here or leave it NULL.
 }
 }
 

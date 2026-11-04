@@ -1,8 +1,8 @@
 cv.drridge <- function(y, x, lambda = NULL, nlambda = 100, tol = 1e-06, maxit = 100,
-                         folds = NULL, nfolds = 10, seed = NULL) {
+                         folds = NULL, nfolds = 10) {
   runtime <- proc.time()
   n <- dim(x)[1]
-  if ( is.null(folds) )  folds <- Compositional::makefolds(1:n, nfolds = nfolds, seed = seed, stratified = FALSE)
+  if ( is.null(folds) )  folds <- Compositional::makefolds(1:n, nfolds = nfolds, stratified = FALSE)
   nfolds <- length(folds)
   lamkld <- list()
 

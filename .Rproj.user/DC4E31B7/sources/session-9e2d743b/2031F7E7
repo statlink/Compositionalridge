@@ -1,26 +1,26 @@
 {
-    "id": "4BC74920",
-    "path": "~/GitHub/Compositionalridge/R/areg.ridge.R",
-    "project_path": "R/areg.ridge.R",
-    "type": "r_source",
+    "id": "2031F7E7",
+    "path": "~/GitHub/Compositionalridge/man/areg.ridge.Rd",
+    "project_path": "man/areg.ridge.Rd",
+    "type": "r_doc",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1793773777782.0,
+    "created": 1793777729062.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "39,35",
-        "scrollLine": "11"
+        "cursorPosition": "102,28",
+        "scrollLine": "81"
     },
     "folds": "",
-    "lastKnownWriteTime": 1793773309,
+    "lastKnownWriteTime": 1789554562,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1793773309,
+    "last_content_update": 1789554562,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -1,4 +1,4 @@
-cv.kldridge <- function(y, x, lambda = NULL, nlambda = 100, folds = NULL,  nfolds = 10, seed = NULL) {
+cv.kldridge <- function(y, x, lambda = NULL, nlambda = 100, folds = NULL,  nfolds = 10) {
 
   runtime <- proc.time()
   n <- dim(y)[1]
@@ -6,8 +6,8 @@ cv.kldridge <- function(y, x, lambda = NULL, nlambda = 100, folds = NULL,  nfold
     poia <- unique( which( y == 0, arr.ind = TRUE)[, 1] )
     if ( length(poia) > nfolds ) {
       id <- numeric(n)   ;   id[poia] <- 1   ;   id <- id + 1
-      folds <- Compositional::makefolds(id, nfolds = nfolds, seed = seed, stratified = TRUE)
-    } else  folds <- Compositional::makefolds(1:n, nfolds = nfolds, seed = seed, stratified = FALSE)
+      folds <- Compositional::makefolds(id, nfolds = nfolds, stratified = TRUE)
+    } else  folds <- Compositional::makefolds(1:n, nfolds = nfolds, stratified = FALSE)
   }
   nfolds <- length(folds)
   lamkld <- list()

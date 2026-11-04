@@ -10,7 +10,7 @@ K-fold cross-validation for the ridge \eqn{\alpha}-regression.
 
 \usage{
 cv.aregridge(y, x, a = seq(0.1, by = 0.1), lambda = NULL, nlambda = 100,
-folds = NULL, nfolds = 10, seed = NULL)
+folds = NULL, nfolds = 10)
 }
 
 \arguments{
@@ -37,9 +37,6 @@ If you have the list with the folds supply it here. You can also leave it NULL a
 }
 \item{nfolds}{
 The number of folds to produce.
-}
-\item{seed}{
-You can specify your own seed number here or leave it NULL.
 }
 }
 

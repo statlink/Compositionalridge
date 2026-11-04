@@ -70,7 +70,7 @@ areg.ridge <- function(y, x, a, lambda = NULL, nlambda = 100, yb = NULL, xnew = 
     be <- list()
     dev <- numeric(nlambda)
     ini <- NULL
-    for ( j in 1:d )  ini <- c(ini, coef(ridge)[[ j ]][, i])
+    for ( j in 1:d )  ini <- c(ini, coef(ridge)[[ j ]][, 1])
     for ( i in 1:nlambda ) {
         suppressWarnings({
         mod <- minpack.lm::nls.lm(par = ini, fn = reg, jac = jac, ya = ya, ax = ax, a = a,
