@@ -37,7 +37,7 @@ areg.ridge <- function(y, x, a, lambda = NULL, nlambda = 100, yb = NULL, xnew = 
   runtime <- proc.time()
 
   m <- Rfast::colmeans(x)
-  s <- Rfast::colVars(x)
+  s <- Rfast::colVars(x, std = TRUE)
   x <- t( ( t(x) - m ) / s )
 
   if ( is.null(yb) ) {
