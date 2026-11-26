@@ -7,7 +7,7 @@ alfa.ridge <- function(y, x, a = seq(-1, 1, by = 0.1), h = TRUE, model = "gaussi
     mod <- glmnet::glmnet(xa, y, alpha = 0, family = model, lambda = lambda)
     est <- NULL
     if ( !is.null(xnew) ) {
-      xnew <- Compositional::alfa(xnew, a[i])$aff ## apply the alpha-transformation
+      xnew <- Compositional::alfa(xnew, a[i], h = h)$aff ## apply the alpha-transformation
       est <- predict(mod, xnew, s = mod$lambda, type = "response")
     }
     res[[ i ]] <- list(mod = mod, est = est)
