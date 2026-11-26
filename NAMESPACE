@@ -7,6 +7,6 @@ importFrom("minpack.lm", nls.lm)
 importFrom("Rfast", rowsums)
 importFrom("stats", predict, coef)
 
-export("areg.ridge", "cv.aregridge", "cv.drridge", "cv.kldridge",
-       "cv.mzilnridge", "cv.zadrridge", "dr.ridge", "kld.ridge", "mziln.ridge",
-       "zadr.ridge")
+export("areg.ridge", "cv.aregridge", "cv.drridge", "cv.kldridge", "cv.mzilnridge", 
+       "cv.zadrridge", "dr.ridge", "kld.ridge", "mziln.ridge", "zadr.ridge", 
+       "alfa.ridge", "cv.alfaridge")

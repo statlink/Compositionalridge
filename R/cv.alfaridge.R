@@ -1,4 +1,4 @@
-cv.alfa.ridge <- function(y, x, a = seq(-1, 1, by = 0.1), h = TRUE, model = "gaussian", lambda = NULL,
+cv.alfaridge <- function(y, x, a = seq(-1, 1, by = 0.1), h = TRUE, model = "gaussian", lambda = NULL,
                            type.measure = "mse", nfolds = 10, folds = NULL, stratified = FALSE) {
   
   n <- length(y)  ;   f <- numeric(n)
