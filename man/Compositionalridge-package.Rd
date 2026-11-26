@@ -16,7 +16,7 @@ logistic normal, the Kullback-Leibler divergence and the alpha-regression.
 Package: \tab Compositionalridge\cr
 Type: \tab Package\cr
 Version: \tab 1.1 \cr
-Date: \tab 2026-11-04 \cr
+Date: \tab 2026-11-26 \cr
 }
 }
 

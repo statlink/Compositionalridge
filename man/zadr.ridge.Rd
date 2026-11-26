@@ -1,4 +1,4 @@
-\name{Ridge regression for compositional data}
+\name{zadr.ridge}
 \alias{zadr.ridge}
 \alias{dr.ridge}
 \alias{kld.ridge}

@@ -1,4 +1,4 @@
-\name{Ridge alpha-regression for compositional data}
+\name{areg.ridge}
 \alias{areg.ridge}
 \title{
 Ridge \eqn{\alpha}-regression for compositional data

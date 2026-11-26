@@ -1,4 +1,4 @@
-\name{Cross-validation for ridge regression for compositional data}
+\name{cv.zadrridge}
 \alias{cv.zadrridge}
 \alias{cv.drridge}
 \alias{cv.kldridge}

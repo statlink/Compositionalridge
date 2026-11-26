@@ -1,4 +1,4 @@
-\name{K-fold cross-validation for the ridge alpha-regression}
+\name{cv.aregridge}
 \alias{cv.aregridge}
 \title{
 K-fold cross-validation for the ridge \eqn{\alpha}-regression
